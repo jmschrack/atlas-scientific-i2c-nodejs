@@ -12,6 +12,10 @@ This is collection of wrapper classes which handle working with EZO Devices over
 
 > Any device that responds properly to the info command, but it not in the supported list, will be instantiated as a generic EZO device
 
+These were the only devices I had on hand to test with.
+
+Pull Requests to support other devices are welcome!
+
 # Install
 
 This requires the PromisifiedBus class from i2c-bus
