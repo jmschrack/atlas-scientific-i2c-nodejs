@@ -3,6 +3,8 @@ const EZODevice = require('./ezo_device.js').default;
 const Pump = require('./pump.js').default;
 const pH = require('./ph_meter.js').default;
 const DO = require('./do_meter.js').default;
+const ORP = require('./orp_meter.js').default;
+const EC = require('./ec_meter').default;
 
 function later(delay) {
     return new Promise(function(resolve) {
@@ -53,4 +55,4 @@ function later(delay) {
 	});
 }
 
-module.exports={FindAllDevices,EZODevice,Pump,pH,DO}
+module.exports={FindAllDevices,EZODevice,Pump,pH,DO,ORP,EC}
