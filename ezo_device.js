@@ -27,10 +27,7 @@ class EZODevice {
 		this.info=info;
 	
 	}
-	/**
-	 * Resolves after 300ms. This can be changed via {this.waitTime}
-	 * @returns 
-	 */
+	
 	Delay(){
 		return new Promise((resolve,reject)=>{
 			setTimeout(resolve,this.waitTime);
@@ -89,6 +86,10 @@ class EZODevice {
 		await this.SendCommand('Plock,'+(lock?1:0));
 	}
 
+	/**
+	 * Returns whether the Protocol currently is locked.
+	 * @returns {Promise<boolean>}
+	 */
 	async GetProtocolLocked(){
 		const cmd='Plock,?';
 		//response: _?Plock,n
@@ -113,7 +114,7 @@ class EZODevice {
 	}
 	/**
 	 * Turns the LED On or Off
-	 * @param {Boolean} isOn 
+	 * @param {Promise<Boolean>} isOn 
 	 */
 	async SetLED(isOn){
 		await this.SendCommand('L,'+(isOn?1:0));
@@ -132,7 +133,7 @@ class EZODevice {
 
 	/**
 	 * Gets the stored name of this device
-	 * @returns 
+	 * @returns {Promise<String>}
 	 */
     async GetName(){
         const cmd="Name,?";

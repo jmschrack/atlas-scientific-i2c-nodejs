@@ -1,5 +1,8 @@
 const EZODevice = require('./ezo_device.js').default;
 
+/**
+ * Wrapper class for EC EZO circuit
+ */
 class EC extends EZODevice{
     constructor(i2c_bus,address,info){
         super(i2c_bus,address,info);

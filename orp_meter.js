@@ -1,5 +1,8 @@
 const EZODevice = require('./ezo_device.js').default;
 
+/**
+ * Wrapper class for ORP EZO circuit
+ */
 class ORP extends EZODevice{
 
     /**
@@ -23,7 +26,7 @@ class ORP extends EZODevice{
 
     /**
      * Returns the calibration status
-     * @returns 
+     * @returns {Promise<boolean>}
      */
     async IsCalibrated(){
         const cmd='Cal,?';
@@ -32,7 +35,7 @@ class ORP extends EZODevice{
 
     /**
      * Takes a single reading
-     * @returns 
+     * @returns {Promise<String>}
      */
     async GetReading(){
         this.waitTime=900;

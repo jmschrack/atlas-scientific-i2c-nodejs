@@ -1,6 +1,9 @@
 const i2c = require('i2c-bus');
 const EZODevice = require('./ezo_device.js').default;
 
+/**
+ * Wrapper class for Peristaltic Pump
+ */
 class Pump extends EZODevice {
 	
 
@@ -82,7 +85,7 @@ class Pump extends EZODevice {
 	
     /**
      * Gets a single value showing dispensed volume.
-     * @returns 
+     * @returns {Promise<Number>}
      */
     async GetReading(){
        return Number.parseFloat((await this.SendCommand('R')).toString('ascii',1));

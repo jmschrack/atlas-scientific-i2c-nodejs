@@ -2,10 +2,21 @@
   "name": "atlas-scientific-i2c",
   "version": "0.1.0",
   "description": "Provides access to AtlasScientific EZO chips via I2C",
-  "keywords": ["EZO","ezo","Atlas Scientific","pH","i2c","I2C","ORP","EC","DO"],
+  "keywords": [
+    "EZO",
+    "ezo",
+    "Atlas Scientific",
+    "pH",
+    "i2c",
+    "I2C",
+    "ORP",
+    "EC",
+    "DO"
+  ],
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "doc": "jsdoc2md *.js > api.md"
   },
   "author": "Jonathan Schrack",
   "license": "ISC",
@@ -15,5 +26,8 @@
   },
   "dependencies": {
     "i2c-bus": "^5.2.2"
+  },
+  "devDependencies": {
+    "jsdoc-to-markdown": "^7.0.1"
   }
 }

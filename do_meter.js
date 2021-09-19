@@ -1,15 +1,29 @@
 const EZODevice = require('./ezo_device.js').default;
 
+/**
+ * Wrapper class for DO EZO circuit
+ */
 class DO extends EZODevice{
 
+    /**
+     * Resets calibration settings
+     */
     async ClearCalibration(){
         await this.SendCommand('Cal,clear');
     }
+
+    /**
+     * Single Point Calibration for Atmospheric Oxygen
+     */
     async CalibrateAtmosphericOxygen(){
         this.waitTime=1300;
         await this.SendCommand('Cal');
         this.waitTime=300;
     }
+
+    /**
+     * Two Point Calibration for 0 Dissolved Oxygen
+     */
     async Calibrate0DissolvedOxygen(){
         this.waitTime=1300;
         await this.SendCommand('Cal,0');
@@ -24,7 +38,7 @@ class DO extends EZODevice{
      * 1 - single point calibrated
      * 
      * 2 - two point calibrated
-     * @returns 
+     * @returns {Promise<String>}
      */
     async IsCalibrated(){
         const cmd='Cal,?';
@@ -53,7 +67,7 @@ class DO extends EZODevice{
 
     /**
      * Gets the current compensated temperature value
-     * @returns 
+     * @returns {Promise<String>}
      */
     async GetTemperatureCompensation(){
         const cmd='T,?';
@@ -86,7 +100,6 @@ class DO extends EZODevice{
      * Sets the PressureCompensation value in kPa.
      * 
      * This parameter can be omitted if the water is less than 10 meters deep
-     * @param {Number} value 
      */
     async SetPressureCompensation(value){
         await this.SendCommand('P,'+value);
@@ -94,7 +107,7 @@ class DO extends EZODevice{
 
     /**
      * Returns the current compensated pressure value in kPa.
-     * @returns 
+     * @returns {Promise<String>}
      */
     async GetPressureCompensation(){
         const cmd='P,?';
@@ -116,7 +129,7 @@ class DO extends EZODevice{
 
     /**
      * Gets a comma seperated string of the currently enabled parameters
-     * @returns 
+     * @returns {Promise<String>}
      */
     async GetParametersEnabled(){
         const cmd='O,?';

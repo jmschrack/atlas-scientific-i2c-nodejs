@@ -1,9 +1,32 @@
+/**
+ * The main entry point
+ * @module atlas-scientific-i2c 
+ */
+
 const i2c = require('i2c-bus');
+/**
+ * Generic EZO device
+ */
 const EZODevice = require('./ezo_device.js').default;
+/**
+ * Peristaltic Pump class
+ */
 const Pump = require('./pump.js').default;
+/**
+ * pH circuit class
+ */
 const pH = require('./ph_meter.js').default;
+/**
+ * Dissolved Oxygen circuit class
+ */
 const DO = require('./do_meter.js').default;
+/**
+ * Oxidation Reduction Potential circuit class
+ */
 const ORP = require('./orp_meter.js').default;
+/**
+ * Electric Connectivity circuit class
+ */
 const EC = require('./ec_meter').default;
 
 function later(delay) {
@@ -59,5 +82,6 @@ function later(delay) {
 	});
 	return devices;
 }
+
 
 module.exports={FindAllDevices,EZODevice,Pump,pH,DO,ORP,EC}

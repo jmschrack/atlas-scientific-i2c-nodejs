@@ -1,7 +1,9 @@
 const i2c = require('i2c-bus');
 const EZODevice = require('./ezo_device.js').default;
 
-
+/**
+ * Wrapper class for pH EZO circuit
+ */
 class pH extends EZODevice{
    
 
@@ -63,7 +65,7 @@ class pH extends EZODevice{
 
     /**
      * Takes a single pH reading
-     * @returns 
+     * @returns {Promise<String>}
      */
     async GetReading(){
         this.waitTime=900;
