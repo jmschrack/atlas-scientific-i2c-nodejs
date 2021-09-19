@@ -38,7 +38,7 @@ function later(delay) {
 			if(promResult.status=="fulfilled"){
 				//console.log(promResult.value.buffer.toString());
 				const info=promResult.value.buffer.toString();
-				if(info.indexOf("?i,")>-1){
+				if(info.indexOf("?I,")>-1){
 					const devType=info.split(',')[1];
 					if(devType=='PMP'){
 						devices.push(new Pump(i2c_bus,results[index],info));
