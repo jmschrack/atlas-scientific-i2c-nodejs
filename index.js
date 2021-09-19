@@ -41,22 +41,23 @@ function later(delay) {
 				if(info.indexOf("?i,")>-1){
 					const devType=info.split(',')[1];
 					if(devType=='PMP'){
-						devices.push(new Pump(i2c_bus,results[index]));
+						devices.push(new Pump(i2c_bus,results[index],info));
 					}else if(devType=='pH'){
-						devices.push(new pH(i2c_bus,results[index]));
+						devices.push(new pH(i2c_bus,results[index],info));
 					}else if(devType=='DO'){
-						devices.push(new DO(i2c_bus,results[index]));
+						devices.push(new DO(i2c_bus,results[index],info));
 					}else if(devType=='EC'){
-						devices.push(new EC(i2c_bus,results[index]));
+						devices.push(new EC(i2c_bus,results[index],info));
 					}else if(devType=='ORP'){
-						devices.push(new ORP(i2c_bus,results[index]));
+						devices.push(new ORP(i2c_bus,results[index],info));
 					}else{
-						devices.push(new EZODevice(i2c_bus,results[index]));
+						devices.push(new EZODevice(i2c_bus,results[index],info));
 					}
 				}
 
 			}
 	});
+	return devices;
 }
 
 module.exports={FindAllDevices,EZODevice,Pump,pH,DO,ORP,EC}

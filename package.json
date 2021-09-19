@@ -1,8 +1,8 @@
 {
   "name": "atlas-scientific-i2c",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Provides access to AtlasScientific EZO chips via I2C",
-  "keywords": ["EZO","ezo","Atlas Scientific","pH","i2c","I2C"],
+  "keywords": ["EZO","ezo","Atlas Scientific","pH","i2c","I2C","ORP","EC","DO"],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

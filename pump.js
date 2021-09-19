@@ -2,9 +2,7 @@ const i2c = require('i2c-bus');
 const EZODevice = require('./ezo_device.js').default;
 
 class Pump extends EZODevice {
-	constructor(i2c_bus,address) {
-		super(i2c_bus,address);
-	}
+	
 
     /**
      * This will begin continuously dispensing liquid until Pause or Stop is given.
