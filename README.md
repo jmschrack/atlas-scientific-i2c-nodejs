@@ -2,6 +2,16 @@
 
 This is collection of wrapper classes which handle working with EZO Devices over I2C in NodeJS.
 
+## Supported Devices
+
+* pH
+* Peristaltic Pump
+* ORP
+* EC
+* DO
+
+> Any device that responds properly to the info command, but it not in the supported list, will be instantiated as a generic EZO device
+
 # Install
 
 This requires the PromisifiedBus class from i2c-bus
