@@ -46,6 +46,10 @@ function later(delay) {
 						devices.push(new pH(i2c_bus,results[index]));
 					}else if(devType=='DO'){
 						devices.push(new DO(i2c_bus,results[index]));
+					}else if(devType=='EC'){
+						devices.push(new EC(i2c_bus,results[index]));
+					}else if(devType=='ORP'){
+						devices.push(new ORP(i2c_bus,results[index]));
 					}else{
 						devices.push(new EZODevice(i2c_bus,results[index]));
 					}
