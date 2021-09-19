@@ -46,7 +46,7 @@ class EZODevice {
 		const wbuf=Buffer.from(command);
 		const rbuf=Buffer.alloc(this.readBufferSize);
 		return new Promise((resolve,reject)=>{
-			i2c_bus.i2cWrite(this.address,wbuf.length,wbuf).then(async _=>{
+			this.i2c_bus.i2cWrite(this.address,wbuf.length,wbuf).then(async _=>{
 				await this.Delay();
 				let r;
 				try{
