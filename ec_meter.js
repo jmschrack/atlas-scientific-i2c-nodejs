@@ -39,13 +39,13 @@ class EC extends EZODevice{
      */
     async SetTemperatureCompensation(value,takeReading=false){
         if(takeReading){
-            await this.SendCommand('T,'+value);
-            return null;
-        }else{
             this.waitTime=900;
             const r = (await this.SendCommand('RT,'+value)).toString('ascii',1);
             this.waitTime=300;
             return r;
+        }else{
+            await this.SendCommand('T,'+value);
+            return null;
         }
     }
 
