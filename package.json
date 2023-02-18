@@ -1,6 +1,6 @@
 {
   "name": "atlas-scientific-i2c",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Provides access to AtlasScientific EZO chips via I2C",
   "keywords": [
     "EZO",
